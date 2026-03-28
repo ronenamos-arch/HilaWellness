@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדריך ניקוי 7 ימים | Nature4u | הילה שטרקר</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --green: #7A9E7E;
+    --green-dark: #5A7B5E;
+    --green-light: #C8DFC9;
+    --rose: #C07070;
+    --rose-light: #EDD5D5;
+    --rose-dark: #9E5555;
+    --cream: #FBF8F4;
+    --text: #2D2D2D;
+    --text-light: #6B6B6B;
+    --border: #E5DDD5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Heebo', Arial, sans-serif;
+    background: #F0EDE8;
+    color: var(--text);
+    direction: rtl;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ========== PAGE WRAPPER ========== */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+  }
+
+  /* ========== COVER PAGE ========== */
+  .cover {
+    background: linear-gradient(160deg, #4A6E4E 0%, #7A9E7E 40%, #9EBC9F 70%, #C8DFC9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -80px; left: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 250px; height: 250px;
+    border-radius: 50%;
+    background: rgba(192,112,112,0.15);
+  }
+
+  .cover-logo {
+    width: 160px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+  }
+
+  .cover-tag {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    border-radius: 30px;
+    padding: 6px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+  }
+
+  .cover h1 {
+    font-size: 46px;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    margin-bottom: 12px;
+  }
+
+  .cover h1 span {
+    color: #FFE8C0;
+  }
+
+  .cover .subtitle {
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    max-width: 480px;
+    margin: 0 auto 40px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 3px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 2px;
+    margin: 0 auto 40px;
+  }
+
+  .cover-promise {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 16px;
+    padding: 24px 32px;
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+
+  .cover-promise p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .cover-promise strong {
+    color: #FFE8C0;
+    display: block;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .cover-author {
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .cover-author strong {
+    color: white;
+    font-weight: 600;
+  }
+
+  /* ========== SECTION PAGES ========== */
+  .section {
+    padding: 60px 52px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .section-number {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--green);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-number.rose { background: var(--rose); }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.3;
+  }
+
+  h2.rose-title { color: var(--rose-dark); }
+
+  h3 {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 28px 0 14px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin: 18px 0 8px;
+  }
+
+  p { margin-bottom: 14px; color: var(--text); }
+
+  /* ========== HIGHLIGHT BOXES ========== */
+  .highlight-box {
+    background: var(--cream);
+    border-right: 4px solid var(--green);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+
+  .highlight-box.rose-box {
+    border-right-color: var(--rose);
+  }
+
+  .highlight-box.aloe-box {
+    background: linear-gradient(135deg, #F0F8F0 0%, #E8F4E8 100%);
+    border-right-color: var(--green-dark);
+    border: 1px solid var(--green-light);
+    border-right-width: 4px;
+  }
+
+  /* ========== BENEFIT GRID ========== */
+  .benefit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .benefit-card {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .benefit-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .benefit-card h4 {
+    margin: 0 0 6px;
+    font-size: 15px;
+    color: var(--green-dark);
+  }
+
+  .benefit-card p {
+    font-size: 13px;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  /* ========== PHASE CARDS ========== */
+  .phase-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .phase-card {
+    border-radius: 14px;
+    padding: 22px 18px;
+    text-align: center;
+  }
+
+  .phase-card.p1 { background: linear-gradient(135deg, #C8DFC9, #A8C9A8); }
+  .phase-card.p2 { background: linear-gradient(135deg, #7A9E7E, #5A7B5E); color: white; }
+  .phase-card.p3 { background: linear-gradient(135deg, #EDD5D5, #DFC0C0); }
+
+  .phase-card .days {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    opacity: 0.75;
+    margin-bottom: 6px;
+  }
+
+  .phase-card h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: inherit;
+  }
+
+  .phase-card p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin: 0;
+    color: inherit;
+  }
+
+  /* ========== DAY CARDS ========== */
+  .day-block {
+    background: var(--cream);
+    border-radius: 16px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .day-header {
+    background: var(--green);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .day-header.phase2 { background: var(--green-dark); }
+  .day-header.phase3 { background: var(--rose); }
+
+  .day-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .day-header .day-tag {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    font-size: 12px;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .day-meals {
+    padding: 22px 24px;
+  }
+
+  .meal-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .meal-time {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green-dark);
+    min-width: 55px;
+    padding-top: 2px;
+    text-align: left;
+  }
+
+  .meal-time.rose { color: var(--rose-dark); }
+
+  .meal-desc {
+    font-size: 14px;
+    color: var(--text);
+    flex: 1;
+    line-height: 1.5;
+  }
+
+  .aloe-pill {
+    display: inline-block;
+    background: var(--green);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  .meal-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 8px 0;
+  }
+
+  .yoga-tip {
+    background: linear-gradient(135deg, var(--rose-light), #F5E0E0);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--rose-dark);
+    border-right: 3px solid var(--rose);
+  }
+
+  .yoga-tip strong { font-weight: 600; }
+
+  /* ========== RECIPES ========== */
+  .recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .recipe-card {
+    background: var(--cream);
+    border-radius: 14px;
+    padding: 22px;
+    border: 1px solid var(--border);
+  }
+
+  .recipe-card h4 {
+    font-size: 16px;
+    color: var(--green-dark);
+    margin: 0 0 6px;
+    font-weight: 700;
+  }
+
+  .recipe-card .servings {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 14px;
+  }
+
+  .recipe-card ul {
+    list-style: none;
+    margin-bottom: 14px;
+  }
+
+  .recipe-card ul li {
+    font-size: 13px;
+    padding: 3px 0;
+    color: var(--text);
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .recipe-card ul li:last-child { border-bottom: none; }
+
+  .recipe-card .method {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ========== SHOPPING LIST ========== */
+  .shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .shop-cat h4 {
+    background: var(--green);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px 8px 0 0;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .shop-cat.rose-cat h4 { background: var(--rose); }
+
+  .shop-cat ul {
+    list-style: none;
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 12px 14px;
+  }
+
+  .shop-cat ul li {
+    font-size: 13px;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .shop-cat ul li:last-child { border-bottom: none; }
+
+  .shop-cat ul li::before {
+    content: '☐';
+    color: var(--green);
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .shop-cat.rose-cat ul li::before { color: var(--rose); }
+
+  /* ========== TIPS ========== */
+  .tips-list {
+    list-style: none;
+    margin: 16px 0;
+  }
+
+  .tips-list li {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+
+  .tip-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+
+  .tip-icon.rose-icon { background: var(--rose-light); }
+
+  .tip-text { flex: 1; }
+  .tip-text strong { display: block; color: var(--green-dark); margin-bottom: 3px; font-size: 15px; }
+  .tip-text span { color: var(--text-light); font-size: 13px; line-height: 1.5; }
+
+  /* ========== CTA ========== */
+  .cta-section {
+    background: linear-gradient(160deg, #4A6E4E 0%, #7A9E7E 60%, #9EBC9F 100%);
+    padding: 60px 52px;
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+
+  .cta-section p {
+    color: rgba(255,255,255,0.88);
+    font-size: 16px;
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: white;
+    color: var(--green-dark);
+    font-family: 'Heebo', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 16px;
+    display: block;
+    max-width: 340px;
+    margin: 0 auto 14px;
+  }
+
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+
+  .cta-btn .wa-icon { margin-left: 10px; }
+
+  .cta-note {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    margin-top: 14px;
+  }
+
+  .cta-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0;
+    text-align: right;
+  }
+
+  .cta-box {
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 18px 16px;
+  }
+
+  .cta-box .cta-box-icon { font-size: 22px; margin-bottom: 8px; }
+  .cta-box p { color: white; font-size: 13px; margin: 0; opacity: 0.9; }
+  .cta-box strong { display: block; color: #FFE8C0; font-size: 14px; margin-bottom: 4px; }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    background: var(--text);
+    padding: 28px 52px;
+    text-align: center;
+  }
+
+  .footer p {
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .footer .brand {
+    color: var(--green-light);
+    font-weight: 600;
+  }
+
+  /* ========== UTILITIES ========== */
+  .page-break { page-break-before: always; }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .tag {
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  .tag.rose-tag {
+    background: var(--rose-light);
+    color: var(--rose-dark);
+  }
+
+  .intro-quote {
+    background: linear-gradient(135deg, var(--cream), white);
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid var(--border);
+    margin: 24px 0;
+    position: relative;
+  }
+
+  .intro-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    font-size: 70px;
+    color: var(--green-light);
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+
+  .intro-quote p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .intro-quote .author {
+    margin-top: 12px;
+    font-size: 14px;
+    color: var(--green-dark);
+    font-weight: 600;
+    font-style: normal;
+    display: block;
+  }
+
+  .aloe-spotlight {
+    background: linear-gradient(135deg, #E8F4E8, #D5EDD5);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 28px 0;
+    border: 1px solid var(--green-light);
+  }
+
+  .aloe-spotlight h3 {
+    color: var(--green-dark);
+    margin: 0 0 14px;
+    font-size: 18px;
+  }
+
+  .aloe-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .aloe-benefit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--green-dark);
+  }
+
+  .aloe-benefit::before {
+    content: '✓';
+    background: var(--green);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; max-width: 100%; }
+    .cta-btn { background: #7A9E7E !important; color: white !important; }
+  }
+</style>
+<script>
+  // ── Access Gate ──────────────────────────────────────────────
+  // Redirect to optin page if no registration token found
+  (function() {
+    const TOKEN_KEY = 'nature4u_access';
+    const OPTIN_URL = 'optin.html';
+    try {
+      const token = localStorage.getItem(TOKEN_KEY);
+      if (!token) {
+        window.location.replace(OPTIN_URL);
+      }
+    } catch(e) {
+      // localStorage unavailable (private browsing?) — allow through
+    }
+  })();
+</script>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== COVER ===== -->
+  <div class="cover">
+    <img src="netify/wellness-logo.png" alt="Hila Wellness Logo" class="cover-logo" onerror="this.style.display='none'">
+    <div class="cover-tag">🌿 מדריך בחינם מאת הילה שטרקר</div>
+    <h1>7 ימים לגוף<br><span>נקי ומחודש</span></h1>
+    <div class="cover-divider"></div>
+    <p class="subtitle">תוכנית ניקוי מלאה עם תפריט יומי, מתכונים טבעיים<br>ותנועת יוגה — לגוף קל, מנוקה ומלא אנרגיה</p>
+    <div class="cover-promise">
+      <p>
+        <strong>🎯 מה תרוויחי בשבוע הזה?</strong>
+        גוף מנוקה מרעלים · אנרגיה מתמשכת · עיכול קל ונוח · ראש צלול וקל · הרגשה שלא הייתה לך זמן רב
+      </p>
+    </div>
+    <p class="cover-author">נוצר בלב שלם על ידי <strong>הילה שטרקר</strong> — מדריכת יוגה מוסמכת ויועצת בריאות טבעית</p>
+  </div>
+
+  <!-- ===== INTRO ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">💚</div>
+      <h2>מילה ממני לפני שמתחילים</h2>
+    </div>
+
+    <div class="intro-quote">
+      <p>ניקוי גוף הוא לא עונש. הוא מתנה שנותנים לעצמנו — הזדמנות לעצור, להקשיב, ולזכור שהגוף שלנו יודע להחלים כשנותנים לו את הסביבה הנכונה.</p>
+      <span class="author">— הילה שטרקר, Nature4u</span>
+    </div>
+
+    <p>שבוע הניקוי הזה לא נועד לייסר אתכן. הוא נועד לאפס — לנקות את מה שמצטבר בגוף לאורך שנים: שאריות עיכול, עומס על הכבד, עייפות כרונית שהתרגלנו אליה.</p>
+
+    <p>התוכנית מחולקת ל-3 שלבים קצרים, עם תפריט יומי ברור, מתכונים פשוטים שניתן להכין בבית, ותנועת יוגה עדינה שמלווה כל יום. כל רכיב בתוכנית נבחר בכוונה מלאה.</p>
+
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">🌿</span>
+        <h4>תזונה מנקה</h4>
+        <p>מזונות שלמים, טבעיים ולא מעובדים שמפחיתים עומס על מערכות הגוף</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🧘‍♀️</span>
+        <h4>יוגה יומית</h4>
+        <p>תרגולים קצרים של 10-15 דקות שמסייעים לניקוי פנימי ולהתחדשות</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">💧</span>
+        <h4>ניקוי עמוק</h4>
+        <p>פרוטוקול שתייה שמזרז את הוצאת הרעלים ותמיכה במערכת העיכול</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">⚡</span>
+        <h4>אנרגיה אמיתית</h4>
+        <p>ללא ממריצים מלאכותיים — רק אנרגיה שצומחת מבפנים</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📋 למי התוכנית מתאימה?</h4>
+      <p>לכל אחת שמרגישה כבדות, עייפות, נפיחות או רק רוצה לאפס את הגוף. אין צורך בניסיון קודם ואין ציוד מיוחד — רק רצון ומרכיבים מהמקרר.</p>
+    </div>
+  </div>
+
+  <!-- ===== ALOE SPOTLIGHT ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">🌱</div>
+      <h2>הכוח הסודי של האלוורה בניקוי</h2>
+    </div>
+
+    <p>לאורך כל 7 ימי התוכנית, ממליצה לכן להוסיף <strong>40 מ"ל ג'ל אלוורה ביולוגי</strong> לשתייה הבוקר. זה לא עוד תוסף — זה רכיב שמשנה את הכללים:</p>
+
+    <div class="aloe-spotlight">
+      <h3>🌿 למה אלוורה ביום הניקוי?</h3>
+      <p style="font-size:14px; color: var(--text-light); margin-bottom: 14px;">ג'ל האלוורה (90.7% ג'ל טהור) מכיל פוליסכרידים ייחודיים שלא נמצאים בשום צמח אחר ומסייעים לגוף לבצע ניקוי פנימי בצורה עמוקה ויעילה.</p>
+      <div class="aloe-benefits">
+        <div class="aloe-benefit">מרכך ומרפא את רירית מערכת העיכול</div>
+        <div class="aloe-benefit">מזרז הוצאת רעלים מהמעיים</div>
+        <div class="aloe-benefit">מחזק את מערכת החיסון בזמן הניקוי</div>
+        <div class="aloe-benefit">מסייע לספיגת חומרים מזינים</div>
+        <div class="aloe-benefit">נוגד דלקת ומרגיע נפיחות</div>
+        <div class="aloe-benefit">מעניק אנרגיה יציבה לאורך היום</div>
+      </div>
+    </div>
+
+    <p style="font-size:13px; color: var(--text-light);"><em>* המלצה: לערבב 40 מ"ל ג'ל אלוורה עם כוס מים (240 מ"ל) ולשתות לפני ארוחת הבוקר. האלוורה שאני משתמשת בה היא Forever Living — 90.7% ג'ל טהור, כשר מהדרין, ללא חומרים משמרים. לפרטים שלחו לי הודעה.</em></p>
+  </div>
+
+  <!-- ===== PHASE OVERVIEW ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number">📋</div>
+      <h2>מפת הדרכים — 3 שלבים, 7 ימים</h2>
+    </div>
+
+    <div class="phase-overview">
+      <div class="phase-card p1">
+        <div class="days">ימים 1-2</div>
+        <h3>שלב א׳<br>הכנה</h3>
+        <p>מוציאים את המזיקים, מכניסים את המיטיבים</p>
+      </div>
+      <div class="phase-card p2">
+        <div class="days">ימים 3-5</div>
+        <h3>שלב ב׳<br>ניקוי עמוק</h3>
+        <p>שיא התוכנית — ניקוי מאוזן ועמוק של הגוף</p>
+      </div>
+      <div class="phase-card p3">
+        <div class="days">ימים 6-7</div>
+        <h3>שלב ג׳<br>חזרה</h3>
+        <p>יציאה הדרגתית ובניית הרגלים חדשים</p>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>📌 כללי הניקוי</h4>
+      <ul class="tips-list" style="margin:8px 0 0;">
+        <li>
+          <div class="tip-icon">🚫</div>
+          <div class="tip-text"><strong>מה מוציאים לשבוע</strong><span>קפה, אלכוהול, סוכר לבן, מזון מעובד, גלוטן, מוצרי חלב, בשר אדום</span></div>
+        </li>
+        <li>
+          <div class="tip-icon">✅</div>
+          <div class="tip-text"><strong>מה שומרים</strong><span>פירות, ירקות, קטניות, דגנים מלאים, זרעים ואגוזים, שמן קוקוס/זית, תבלינים טבעיים</span></div>
+        </li>
+        <li>
+          <div class="tip-icon">💧</div>
+          <div class="tip-text"><strong>שתייה</strong><span>מינימום 2 ליטר מים ביום + תה צמחים + ג'ל אלוורה. להתחיל כל בוקר עם כוס מים חמים + חצי לימון</span></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== PHASE 1 ===== -->
+  <div class="section page-break">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>שלב א׳ — הכנה וגמילה רכה</h2>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">ימים 1-2</span>
+      <span class="tag">🌿 גמילה מעדינה</span>
+      <span class="tag">תחושה: שינוי מתחיל</span>
+    </div>
+
+    <p>בשני הימים הראשונים לא עוצרים הכל בבת אחת — מאפשרים לגוף להסתגל. מוציאים מהתפריט את הכבדים (קפה, סוכר, מוצרי חלב) ומכניסים מזונות מנקים עדינים.</p>
+
+    <!-- DAY 1 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>יום ראשון</h3>
+        <span class="day-tag">שלב א׳ — הכנה</span>
+      </div>
+      <div class="day-meals">
+        <div class="meal-row">
+          <div class="meal-time">בהשכמה</div>
+          <div class="meal-desc">כוס מים חמימים עם חצי לימון · <span class="aloe-pill">🌿 אלוורה</span> 40 מ"ל + כוס מים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">עד 10:00</div>
+          <div class="meal-desc">תה צמחים עם כפית שמן קוקוס (קינמון / סרפד / רוזמרין)</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">10:00</div>
+          <div class="meal-desc">שייק סופרפוד ירוק (ראו מתכון) <em>— או —</em> קערת סמודי ברי'ס</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">13:00</div>
+          <div class="meal-desc">סלט שורשים מגורד עם טחינה גולמית <em>— או —</em> מרק שורשים מרפא</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">16:00</div>
+          <div class="meal-desc">תה צמחים · תמרים (2) <em>— או —</em> תפוח עם חמאת שקדים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">19:00</div>
+          <div class="meal-desc">ירקות אפויים (אנטיפסטי) עם אבוקדו <em>— או —</em> מרק שורשים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">אחרי ערב</div>
+          <div class="meal-desc">תה קמומיל / מנטה</div>
+        </div>
+        <div class="yoga-tip">
+          <strong>🧘 יוגה להיום:</strong> 10 דקות שכיבה עם ברכיים לחזה — עיסוי עדין לאיברי הבטן. 5 נשימות עמוקות בכל תנוחה.
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-block">
+      <div class="day-header">
+        <h3>יום שני</h3>
+        <span class="day-tag">שלב א׳ — הכנה</span>
+      </div>
+      <div class="day-meals">
+        <div class="meal-row">
+          <div class="meal-time">בהשכמה</div>
+          <div class="meal-desc">כוס מים חמימים עם חצי לימון · <span class="aloe-pill">🌿 אלוורה</span> 40 מ"ל + כוס מים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">עד 10:00</div>
+          <div class="meal-desc">תה צמחים עם כפית שמן קוקוס</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">10:00</div>
+          <div class="meal-desc">פודינג צ'יה עם פירות עונה <em>— או —</em> גוואקמולי על פרוסת כוסמת</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">13:00</div>
+          <div class="meal-desc">טבולה קינואה <em>— או —</em> סלט אצות עם נבטי ברוקולי</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">16:00</div>
+          <div class="meal-desc">תה צמחים · 7 שקדים ו-2 תמרים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">19:00</div>
+          <div class="meal-desc">ירקות מאודים עם טופו <em>— או —</em> סלט ירוק עם הפתעות</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">אחרי ערב</div>
+          <div class="meal-desc">תה גדילן מצוי (מצוין לכבד)</div>
+        </div>
+        <div class="yoga-tip">
+          <strong>🧘 יוגה להיום:</strong> תנוחת ילד (Balasana) — 2 דקות. ואחריה סיבוב מושב (Seated Twist) ימין ושמאל — לסחיטה ועיסוי של הכבד.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PHASE 2 ===== -->
+  <div class="section page-break">
+    <div class="section-header">
+      <div class="section-number" style="background: var(--green-dark);">2</div>
+      <h2>שלב ב׳ — ניקוי עמוק</h2>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">ימים 3-5</span>
+      <span class="tag" style="background:#C8DFC9; color:#3D5E40;">🔥 שיא הניקוי</span>
+      <span class="tag">תחושה: קל יותר מרגע לרגע</span>
+    </div>
+
+    <p>אלה הימים שהגוף עובד הכי קשה. אפשר לצפות לקצת ראש כבד בימים 3-4 (זה תקין — הגוף מנקה). מוסיפים יותר נוזלים וממשיכים.</p>
+
+    <div class="highlight-box">
+      <h4>💧 פרוטוקול שתייה חובה לשלב ב׳</h4>
+      <p style="margin:0; font-size:14px;">בין ארוחות: ½ ליטר מים עם לימון. בסך הכל 2.5 ליטר מים ביום + תה צמחים + אלוורה. <strong>שתייה היא המנוע של הניקוי.</strong></p>
+    </div>
+
+    <!-- DAY 3 -->
+    <div class="day-block">
+      <div class="day-header phase2">
+        <h3>יום שלישי</h3>
+        <span class="day-tag">שלב ב׳ — ניקוי עמוק</span>
+      </div>
+      <div class="day-meals">
+        <div class="meal-row">
+          <div class="meal-time">בהשכמה</div>
+          <div class="meal-desc">מים חמים + לימון · <span class="aloe-pill">🌿 אלוורה</span> 40 מ"ל + כוס מים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">עד 10:00</div>
+          <div class="meal-desc">תה צמחים + כפית שמן קוקוס</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">10:00</div>
+          <div class="meal-desc">שייק ניקוי ירוק עם ג'ינג'ר ולימון (ראו מתכון)</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">11-12:30</div>
+          <div class="meal-desc">½ ליטר מים עם לימון</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">13:00</div>
+          <div class="meal-desc">מרק מאזן ביתי (ראו מתכון) — 2 כוסות</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">16:00</div>
+          <div class="meal-desc">שייק ניקוי ירוק</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">17-18:30</div>
+          <div class="meal-desc">½ ליטר מים עם לימון</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">19:00</div>
+          <div class="meal-desc">מרק מאזן — 2 כוסות</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">אחרי ערב</div>
+          <div class="meal-desc">תה קמומיל / לבנדר</div>
+        </div>
+        <div class="yoga-tip">
+          <strong>🧘 יוגה להיום:</strong> 10 דקות תרגולי נשימה (Pranayama) — נשימה מלאה + Kapalabhati (נשימת אש). מזרזת עיכול ומנקה את הריאות.
+        </div>
+      </div>
+    </div>
+
+    <!-- DAYS 4-5 NOTE -->
+    <div class="highlight-box">
+      <h4>📋 ימים 4 ו-5 — אותו תפריט כמו יום 3</h4>
+      <p style="margin:0; font-size:14px;">שני שיקי ניקוי + שני מרקות מאזנות + פרוטוקול שתייה. כל יום — בחרי 3 ירקות שונים למרק המאזן לגיוון. יוגה: 10-15 דקות יחסי קדמה (Forward Folds) לכל ארבע ימי הניקוי.</p>
+    </div>
+  </div>
+
+  <!-- ===== PHASE 3 ===== -->
+  <div class="section page-break">
+    <div class="section-header">
+      <div class="section-number rose">3</div>
+      <h2 class="rose-title">שלב ג׳ — יציאה הדרגתית</h2>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag rose-tag">ימים 6-7</span>
+      <span class="tag rose-tag">🌸 חזרה רכה לחיים</span>
+      <span class="tag rose-tag">תחושה: גוף חדש</span>
+    </div>
+
+    <p>לא עוצרים בבת אחת. הגוף הותאם לניקוי — חוזרים בהדרגה, שומרים על מה שהשגנו. ימים 6-7 הם כמו גשר — ממשיכים עם שייקים ומרקות אבל מוסיפים מזונות מוצקים עדינים.</p>
+
+    <!-- DAY 6 -->
+    <div class="day-block">
+      <div class="day-header phase3">
+        <h3>יום שישי</h3>
+        <span class="day-tag">שלב ג׳ — יציאה הדרגתית</span>
+      </div>
+      <div class="day-meals">
+        <div class="meal-row">
+          <div class="meal-time">בהשכמה</div>
+          <div class="meal-desc">מים חמים + לימון · <span class="aloe-pill rose" style="background: var(--rose);">🌿 אלוורה</span> 40 מ"ל + כוס מים</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">10:00</div>
+          <div class="meal-desc">שייק סופרפוד (כמו ימים 1-2)</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">11-12:30</div>
+          <div class="meal-desc">½ ליטר מים עם לימון</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">13:00</div>
+          <div class="meal-desc">מרק שורשים מרפא <em>— או —</em> טבולה קינואה <em>— או —</em> סלט אצות</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">16:00</div>
+          <div class="meal-desc">תה צמחים + כדורי אנרגיה (ראו מתכון)</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">19:00</div>
+          <div class="meal-desc">מרק מיסו עם אצות <em>— או —</em> סלט ירוק עם הפתעות</div>
+        </div>
+        <div class="yoga-tip">
+          <strong>🧘 יוגה להיום:</strong> תרגול הודי מלא — סרייה נמסקר (שמש קצרה) × 5 סיבובים. לאט, עם נשימה, עם כוונה. תודה לגוף על השבוע.
+        </div>
+      </div>
+    </div>
+
+    <!-- DAY 7 -->
+    <div class="day-block">
+      <div class="day-header phase3">
+        <h3>יום שביעי — יום ההשלמה</h3>
+        <span class="day-tag">שלב ג׳ — חגיגה</span>
+      </div>
+      <div class="day-meals">
+        <div class="meal-row">
+          <div class="meal-time">בהשכמה</div>
+          <div class="meal-desc">מים חמים + לימון · <span class="aloe-pill" style="background: var(--rose);">🌿 אלוורה</span> 40 מ"ל — וחייכי לעצמך 😊</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">10:00</div>
+          <div class="meal-desc">קערת סמודי ברי'ס חגיגית — עם כל הטופינגז</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">13:00</div>
+          <div class="meal-desc">סלט ירוק עם הפתעות + פיתת כוסמת</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">16:00</div>
+          <div class="meal-desc">כדורי אנרגיה + תה מחמם</div>
+        </div>
+        <div class="meal-divider"></div>
+        <div class="meal-row">
+          <div class="meal-time">19:00</div>
+          <div class="meal-desc">ירקות מאודים עם טופו + מרק RAW</div>
+        </div>
+        <div class="yoga-tip">
+          <strong>🧘 יוגה להיום:</strong> מדיטציה שוכבת — 15 דקות. אקו ידיים על הבטן, נשימה עמוקה. קנו רגע לעצמכן עם מה שעשיתן.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RECIPES ===== -->
+  <div class="section page-break">
+    <div class="section-header">
+      <div class="section-number">👩‍🍳</div>
+      <h2>המתכונים</h2>
+    </div>
+
+    <div class="recipe-grid">
+
+      <div class="recipe-card">
+        <h4>שייק סופרפוד ירוק</h4>
+        <div class="servings">🍶 2 כוסות</div>
+        <ul>
+          <li>½ כוס מיץ תפוחים טבעי</li>
+          <li>½ כוס מים</li>
+          <li>1 כוס פירות קפואים (מנגו / ברי'ס)</li>
+          <li>חופן קייל / תרד / מנגולד</li>
+          <li>חופן נבטים</li>
+          <li>1 כף ספירולינה / מורינגה</li>
+          <li>1 כף שמן קוקוס + כוס קרח</li>
+        </ul>
+        <p class="method">לערבב בבלנדר עד לקרמי. לשתות מיד.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>שייק ניקוי ירוק</h4>
+        <div class="servings">🍶 מנה אחת</div>
+        <ul>
+          <li>1 מלפפון / אגס</li>
+          <li>חופן עלים ירוקים</li>
+          <li>חופן נבטים</li>
+          <li>¼ לימון עם הקליפה</li>
+          <li>פרוסת ג'ינג'ר טרי</li>
+          <li>½ כוס מיץ תפוחים + ½ כוס מים</li>
+          <li>½ כוס קרח</li>
+        </ul>
+        <p class="method">לבלנד לחלק ולשתות מיד. זה חמצמץ ומנקה!</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>מרק מאזן</h4>
+        <div class="servings">🍲 5-6 מנות</div>
+        <ul>
+          <li>3 סוגי ירקות לבחירה (כרובית, ברוקולי, קישוא, דלעת, סלק, גזר, שומר, כרישה)</li>
+          <li>3 שיני שום + 2 ס"מ ג'ינג'ר</li>
+          <li>חופן פטרוזיליה, כוסברה, בזיליקום</li>
+          <li>כפית מלח + 2 כפות שמן זית + קורט צ'ילי</li>
+        </ul>
+        <p class="method">לחתוך ולבשל עם מים 20 דקות. להעביר לבלנדר עם הירוקים הטריים ולתבל. לטחון בכל יום מחדש!</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>מרק שורשים ופטריות מרפא</h4>
+        <div class="servings">🍲 6 מנות</div>
+        <ul>
+          <li>בצל + 5 שיני שום + 3 ס"מ ג'ינג'ר</li>
+          <li>2 גזרים + סלק + שורש סלרי + שורש פטרוזיליה</li>
+          <li>שיטקה + מלך היער (כוס כ"א)</li>
+          <li>כפית כורכום + ¼ כפית פלפל שחור</li>
+          <li>½ כוס גוג'י ברי'ס + כוסברה</li>
+          <li>1.5 ליטר מים</li>
+        </ul>
+        <p class="method">לרכך בצל ושום עם שמן קוקוס. להוסיף ירקות ומים ולבשל שעה על אש קטנה. להוסיף גוג'י בסוף. לזרות כוסברה בהגשה.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>קערת סמודי ברי'ס</h4>
+        <div class="servings">🥣 מנה אחת</div>
+        <ul>
+          <li>1 כף אבקת אסאי</li>
+          <li>1 כוס מנגו קפוא + 1 כוס תותים קפואים</li>
+          <li>¼ כוס חלב מין הצומח</li>
+          <li>1 כף חמאת קוקוס / שקדים</li>
+        </ul>
+        <p class="method">לטחון בבלנדר לסמיך. לזרות מעל גרנולה, פירות טריים, שבבי קקאו ואגוזים.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>כדורי אנרגיה</h4>
+        <div class="servings">🍬 ~15 כדורים</div>
+        <ul>
+          <li>1 כוס אגוזי קשיו</li>
+          <li>5 תמרים מג'הול מגולענים</li>
+          <li>2 כפות מיץ לימון / ליים</li>
+          <li>1 כף גרדת קליפת לימון</li>
+        </ul>
+        <p class="method">לעבד במעבד מזון עד ל"בצק" דביק. לגלגל כדורים. לצפות בשבבי קוקוס. לשמור בקירור.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>גוואקמולי</h4>
+        <div class="servings">🥑 מנה אחת</div>
+        <ul>
+          <li>אבוקדו שלם</li>
+          <li>גמבה בינונית קצוצה דק</li>
+          <li>עגבנייה בינונית קצוצה</li>
+          <li>2 גבעולי בצל ירוק</li>
+          <li>2 כפות מיץ לימון + מלח הימלאיה</li>
+        </ul>
+        <p class="method">למעוך אבוקדו עם מזלג ולערבב עם כל המרכיבים. להגיש על פיתת כוסמת.</p>
+      </div>
+
+      <div class="recipe-card">
+        <h4>סלט ירוק עם הפתעות</h4>
+        <div class="servings">🥗 2 מנות</div>
+        <ul>
+          <li>6 עלי חסה + 3 עלי קייל + בזיליקום</li>
+          <li>חופן נבטי חמניה + נבטי ברוקולי</li>
+          <li>אבוקדו + 2 כפות צנוברים</li>
+          <li>3 כפות אגוזי מלך</li>
+          <li>שמן זית + לימון + מלח הימלאיה</li>
+        </ul>
+        <p class="method">לחתוך גס. להוסיף נבטים ואגוזים. לעסות עם רוטב עד שהעלים מתרככים.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== TIPS ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-number rose">💡</div>
+      <h2 class="rose-title">טיפים להצלחה</h2>
+    </div>
+
+    <ul class="tips-list">
+      <li>
+        <div class="tip-icon">🌅</div>
+        <div class="tip-text">
+          <strong>בוקר מנצח</strong>
+          <span>הכוס הראשונה (מים חמים + לימון + אלוורה) היא ההרגל החשוב ביותר. עשי אותה לפני שאת מסתכלת בטלפון.</span>
+        </div>
+      </li>
+      <li>
+        <div class="tip-icon">😴</div>
+        <div class="tip-text">
+          <strong>שינה — חלק מהניקוי</strong>
+          <span>הגוף מנקה בלילה. 7-8 שעות שינה הן לא מותרות בשבוע הניקוי — הן חובה.</span>
+        </div>
+      </li>
+      <li>
+        <div class="tip-icon">📱</div>
+        <div class="tip-text">
+          <strong>גמילה דיגיטלית קצרה</strong>
+          <span>גם הראש צריך ניקוי. נסי שעה ביום ללא מסכות — רק אוכל, נשימה, ותנועה.</span>
+        </div>
+      </li>
+      <li>
+        <div class="tip-icon rose-icon">🍋</div>
+        <div class="tip-text">
+          <strong>ראש כבד בימים 3-4 — זה תקין</strong>
+          <span>כאב ראש קל, עייפות, ריח שונה מהגוף — אלה סימנים שהניקוי עובד. שתי יותר מים ותמשיכי.</span>
+        </div>
+      </li>
+      <li>
+        <div class="tip-icon rose-icon">🫶</div>
+        <div class="tip-text">
+          <strong>גמישות > שלמות</strong>
+          <span>אם פספסת ארוחה או הוספת משהו לא בתפריט — ממשיכים. ניקוי לא נהרס מארוחה אחת.</span>
+        </div>
+      </li>
+    </ul>
+
+    <!-- SHOPPING LIST -->
+    <h3 style="margin-top:36px;">🛒 רשימת קניות — שבוע שלם</h3>
+
+    <div class="shop-grid">
+      <div class="shop-cat">
+        <h4>🥦 ירקות ועלים</h4>
+        <ul>
+          <li>קייל / תרד / מנגולד</li>
+          <li>קישואים (4-5)</li>
+          <li>ברוקולי + כרובית</li>
+          <li>גזרים (1 ק"ג)</li>
+          <li>סלק (3-4)</li>
+          <li>שומר + כרישה</li>
+          <li>עגבניות (0.5 ק"ג)</li>
+          <li>מלפפונים (4-5)</li>
+          <li>אבוקדו (4-5)</li>
+          <li>גמבה (2)</li>
+          <li>צנוניות + בצל ירוק</li>
+        </ul>
+      </div>
+
+      <div class="shop-cat rose-cat">
+        <h4>🍎 פירות וסופרפוד</h4>
+        <ul>
+          <li>מנגו קפוא (500 גרם)</li>
+          <li>תותים קפואים (500 גרם)</li>
+          <li>תפוחים (5-6)</li>
+          <li>לימונים (8-10)</li>
+          <li>תמרים מג'הול (10-15)</li>
+          <li>גוג'י ברי'ס</li>
+          <li>אבקת ספירולינה / מורינגה</li>
+          <li>אבקת אסאי</li>
+          <li>שבבי קקאו</li>
+          <li>שבבי קוקוס</li>
+        </ul>
+      </div>
+
+      <div class="shop-cat">
+        <h4>🌰 אגוזים, זרעים ויבשים</h4>
+        <ul>
+          <li>שקדים + אגוזי קשיו</li>
+          <li>אגוזי מלך</li>
+          <li>גרעיני חמניה + דלעת</li>
+          <li>צנוברים</li>
+          <li>זרעי צ'יה</li>
+          <li>שומשום מלא</li>
+          <li>אצות ארמה + וואקמה</li>
+        </ul>
+      </div>
+
+      <div class="shop-cat rose-cat">
+        <h4>🫙 מזון בסיסי + שמנים</h4>
+        <ul>
+          <li>קינואה (500 גרם)</li>
+          <li>כוסמת ירוקה</li>
+          <li>טופו (200 גרם)</li>
+          <li>שמן קוקוס + שמן זית</li>
+          <li>מיסו (ללא גלוטן)</li>
+          <li>טחינה גולמית</li>
+          <li>סויה תמרי (ללא גלוטן)</li>
+          <li>מלח הימלאיה</li>
+          <li>תה צמחים מגוון</li>
+          <li>מיץ תפוחים טבעי</li>
+          <li>חלב קוקוס / שקדים</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-section">
+    <h2>מוכנה להמשיך הלאה?</h2>
+    <p>שבוע הניקוי הוא הצעד הראשון. השלב הבא הוא לבנות הרגלי בריאות שנשארים — ואת זה עושים יחד.</p>
+
+    <div class="cta-boxes">
+      <div class="cta-box">
+        <div class="cta-box-icon">💬</div>
+        <p><strong>ייעוץ אישי</strong>שלחי לי הודעה — נבנה יחד תוכנית שמתאימה לגוף שלך</p>
+      </div>
+      <div class="cta-box">
+        <div class="cta-box-icon">🌿</div>
+        <p><strong>מוצרי הניקוי</strong>ג'ל אלוורה ומוצרים נוספים שעוזרים לשמר את התוצאות</p>
+      </div>
+      <div class="cta-box">
+        <div class="cta-box-icon">🧘‍♀️</div>
+        <p><strong>יוגה ומדיטציה</strong>שיעורים, סדנאות ותוכניות מנחות לחיים בריאים יותר</p>
+      </div>
+    </div>
+
+    <a href="https://wa.me/972XXXXXXXXX?text=היי%20הילה!%20סיימתי%20את%20מדריך%20הניקוי%20ואני%20רוצה%20לשמוע%20עוד%20😊" class="cta-btn">
+      <span class="wa-icon">💬</span> שלחי לי הודעה ב-WhatsApp
+    </a>
+    <p class="cta-note">ייעוץ ראשוני חינם · ללא התחייבות · עונה תוך שעה</p>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
+    <p>
+      <span class="brand">Nature4u | הילה שטרקר</span> — מדריכת יוגה מוסמכת ויועצת בריאות טבעית<br>
+      © 2024 כל הזכויות שמורות | מדריך זה מיועד למטרות מידע כלליות בלבד ואינו מהווה ייעוץ רפואי.<br>
+      במצב רפואי מיוחד יש להתייעץ עם רופא לפני הניקוי.
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
