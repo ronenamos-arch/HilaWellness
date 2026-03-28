@@ -183,7 +183,7 @@
     color: #BBB;
   }
 
-  .field input[type="tel"] {
+  .field input[type="email"] {
     direction: ltr;
     text-align: right;
   }
@@ -404,8 +404,14 @@
         </div>
 
         <div class="field">
+          <label for="email">כתובת אימייל 📧</label>
+          <input type="email" id="email" name="email" placeholder="example@gmail.com" autocomplete="email">
+          <span class="error-msg" id="emailError">אנא הכניסי כתובת אימייל תקינה</span>
+        </div>
+
+        <div class="field">
           <label for="phone">מספר וואטסאפ 📱</label>
-          <input type="tel" id="phone" name="phone" placeholder="05X-XXXXXXX" autocomplete="tel">
+          <input type="tel" id="phone" name="phone" placeholder="05X-XXXXXXX" autocomplete="tel" style="direction:ltr; text-align:right;">
           <span class="error-msg" id="phoneError">אנא הכניסי מספר תקין</span>
         </div>
 
@@ -428,7 +434,7 @@
   <div class="success-card">
     <span class="success-icon">🎉</span>
     <h2 id="successName">כל הכבוד!</h2>
-    <p>המדריך מוכן עבורך!<br>הילה תשלח לך הודעת וואטסאפ בהקדם עם הפרטים.<br><br>לחצי להמשך לקריאת המדריך 👇</p>
+    <p>המדריך מוכן עבורך!<br>נפתח חלון להצטרפות לקהילת הוואטסאפ של הילה 🌿<br><br>לחצי להמשך לקריאת המדריך 👇</p>
     <a href="lead-magnet-guide.html" class="success-btn" id="guideBtn">
       פתחי את המדריך עכשיו →
     </a>
@@ -438,24 +444,37 @@
 
 <script>
   // ── Config ──────────────────────────────────────────────────
-  const HILA_WHATSAPP = '972XXXXXXXXX'; // ← החלף במספר של הילה
-  const GUIDE_URL     = 'lead-magnet-guide.html';
-  const TOKEN_KEY     = 'nature4u_access';
+  const WA_COMMUNITY = 'https://chat.whatsapp.com/KLTXMFN3UiM6W9qU3p4Wti';
+  const GUIDE_URL    = 'lead-magnet-guide.html';
+  const TOKEN_KEY    = 'nature4u_access';
+
+  // Google Form config
+  const GF_ACTION    = 'https://docs.google.com/forms/d/e/1FAIpQLSfs7duQMlWtWRZ6DQCa6dUZz7cmeWl5GeNWg4KzRnoGJzo4Tw/formResponse';
+  const GF_NAME      = 'entry.792996890';
+  const GF_EMAIL     = 'entry.832050978';
+  const GF_PHONE     = 'entry.1778335347';
 
   // ── Form submit ─────────────────────────────────────────────
   document.getElementById('optinForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const name  = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     let valid = true;
 
-    // Basic validation
     if (!name) {
       document.getElementById('nameError').style.display = 'block';
       valid = false;
     } else {
       document.getElementById('nameError').style.display = 'none';
+    }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById('emailError').style.display = 'block';
+      valid = false;
+    } else {
+      document.getElementById('emailError').style.display = 'none';
     }
 
     if (!phone || phone.replace(/\D/g, '').length < 9) {
@@ -467,34 +486,36 @@
 
     if (!valid) return;
 
-    // Set access token in localStorage
+    // Set access token in localStorage (gates the guide)
     localStorage.setItem(TOKEN_KEY, JSON.stringify({
       name: name,
       registered: true,
       ts: Date.now()
     }));
 
-    // Open WhatsApp message to Hila (this IS the "registration" notification)
-    const waMsg = encodeURIComponent(
-      `שלום הילה! שמי ${name} 👋\nנרשמתי לקבל את מדריך ניקוי 7 הימים.\nמספרי: ${phone}`
-    );
-    const waURL = `https://wa.me/${HILA_WHATSAPP}?text=${waMsg}`;
+    // Silent submit to Google Form → saves to Google Sheets
+    const formData = new FormData();
+    formData.append(GF_NAME,  name);
+    formData.append(GF_EMAIL, email);
+    formData.append(GF_PHONE, phone);
+    fetch(GF_ACTION, { method: 'POST', mode: 'no-cors', body: formData })
+      .catch(() => {}); // no-cors = no response needed, data still saves
 
-    // Open WA in background (mobile: new tab; desktop: new tab)
-    window.open(waURL, '_blank');
+    // Open WhatsApp community in new tab
+    window.open(WA_COMMUNITY, '_blank');
 
     // Show success overlay
     document.getElementById('successName').textContent = `כל הכבוד, ${name}!`;
     document.getElementById('successOverlay').classList.add('show');
 
-    // Countdown auto-redirect
+    // Countdown auto-redirect to guide
     let secs = 5;
     const timerEl = document.getElementById('timer');
-    const countdown = setInterval(() => {
+    const interval = setInterval(() => {
       secs--;
       timerEl.textContent = secs;
       if (secs <= 0) {
-        clearInterval(countdown);
+        clearInterval(interval);
         window.location.href = GUIDE_URL;
       }
     }, 1000);
