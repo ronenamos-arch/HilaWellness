@@ -442,6 +442,21 @@
   </div>
 </div>
 
+<!-- Hidden iframe captures Google's response so the user stays on our page -->
+<iframe id="gf-iframe" name="gf-iframe" style="display:none;" aria-hidden="true"></iframe>
+
+<!-- Hidden form that submits silently to Google Forms -->
+<form
+  id="gf-hidden-form"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSfs7duQMlWtWRZ6DQCa6dUZz7cmeWl5GeNWg4KzRnoGJzo4Tw/formResponse"
+  method="POST"
+  target="gf-iframe"
+  style="display:none;">
+  <input type="hidden" id="gf-name"  name="entry.792996890">
+  <input type="hidden" id="gf-email" name="entry.832050978">
+  <input type="hidden" id="gf-phone" name="entry.1778335347">
+</form>
+
 <script>
   // ── Config ──────────────────────────────────────────────────
   const WA_COMMUNITY = 'https://chat.whatsapp.com/KLTXMFN3UiM6W9qU3p4Wti';
@@ -493,13 +508,13 @@
       ts: Date.now()
     }));
 
-    // Silent submit to Google Form → saves to Google Sheets
-    const formData = new FormData();
-    formData.append(GF_NAME,  name);
-    formData.append(GF_EMAIL, email);
-    formData.append(GF_PHONE, phone);
-    fetch(GF_ACTION, { method: 'POST', mode: 'no-cors', body: formData })
-      .catch(() => {}); // no-cors = no response needed, data still saves
+    // Silent submit to Google Form via hidden iframe (bypasses CORS)
+    const iframe = document.getElementById('gf-iframe');
+    const gfForm = document.getElementById('gf-hidden-form');
+    document.getElementById('gf-name').value  = name;
+    document.getElementById('gf-email').value = email;
+    document.getElementById('gf-phone').value = phone;
+    gfForm.submit();
 
     // Open WhatsApp community in new tab
     window.open(WA_COMMUNITY, '_blank');
